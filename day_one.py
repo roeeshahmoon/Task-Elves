@@ -27,4 +27,4 @@ with open('input.txt', 'r') as file:
 #print(two_digits_list)
 
 result = sum_values_in_list(two_digits_list)
-print(result)
+print("The Result of Day One is:", result)

@@ -43,4 +43,4 @@ if __name__ == "__main__":
     print(two_digits_list)
 
     result = sum_values_in_list(two_digits_list)
-    print("the result day two is:" ,result)
+    print("The Result of Day Two is:" ,result)
