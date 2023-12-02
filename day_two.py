@@ -17,24 +17,30 @@ def replace_text_to_nums(input_string):
         res_string = res_string.replace(key, value)
     return res_string
 
-        
-with open('input_day_two.txt', 'r') as file:
-    numbers_list = []
-    two_digits_list = []
-    # Read the entire content of the file
-    content = file.readlines()
-    print("this is start of mission day 2 by Roee Shahmoon")
-    for line in content:
-        newline = replace_text_to_nums(line)        
-        numbers_list.append(extract_numbers(newline))
-    #print(numbers_list)
-    for str in numbers_list:
-        if len(str) == 1:
-            two_digits_list.append(str + str)
-        else:
-            two_digits_list.append(str[0] + str[-1])
+if __name__ == "__main__":
+    with open('input_day_two.txt', 'r') as file:
+        numbers_list = []
+        two_digits_list = []
+        # Read the entire content of the file
+        content = file.readlines()
+        print("this is start of mission day 2 by Roee Shahmoon")
+        for line in content:
+            newline = replace_text_to_nums(line)    
 
-#print(two_digits_list)
+            #print("this is line:", line)
+            #print("this is line after replace:", newline)
+            #print("this is line after extract numbers:", extract_numbers(newline))
+            #print("**********************************************************\n")
 
-result = sum_values_in_list(two_digits_list)
-print(result)
+            numbers_list.append(extract_numbers(newline))
+        #print(numbers_list)
+        for str in numbers_list:
+            if len(str) == 1:
+                two_digits_list.append(str + str)
+            else:
+                two_digits_list.append(str[0] + str[-1])
+
+    print(two_digits_list)
+
+    result = sum_values_in_list(two_digits_list)
+    print("the result is:" ,result)
